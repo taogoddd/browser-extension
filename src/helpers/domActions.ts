@@ -11,7 +11,7 @@ async function sendCommand(method: string, params?: any) {
 
 async function getObjectId(originalId: number) {
   const uniqueId = await callRPC('getUniqueElementSelectorId', [originalId]);
-  // get node id
+  // get node id 
   const document = (await sendCommand('DOM.getDocument')) as any;
   const { nodeId } = (await sendCommand('DOM.querySelector', {
     nodeId: document.root.nodeId,

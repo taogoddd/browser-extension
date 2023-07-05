@@ -19,7 +19,7 @@ const formattedActions = availableActions
 const systemMessage = `
 You are a browser automation assistant.
 
-You can use the following tools:
+You MUST use the following tools. NEVER EVER EVER make up tools that do not exist:
 
 ${formattedActions}
 
@@ -30,7 +30,7 @@ This is an example of an action:
 <Thought>I should click the add to cart button</Thought>
 <Action>click(223)</Action>
 
-You must always include the <Thought> and <Action> open/close tags or else your response will be marked as invalid.`;
+You MUST always include the <Thought> and <Action> open/close tags or else your response will be marked as invalid.`;
 
 export async function determineNextAction(
   taskInstructions: string,
